@@ -4,14 +4,30 @@ import { Component } from 'react';
 
 class App extends Component {
 
+  constructor(){
+    // call super for proper initialization 
+    super();
+
+    this.state = {name:'Josh'};
+
+
+  }
+
   render(){
   return (
   <div className="App">
          <header className="App-header">
            <img src={logo} className="App-logo" alt="logo" />
            <p>
-             Edit <code>src/App.js</code> and save to reload.
+             Hi {this.state.name}
            </p>
+           <button onClick={()=>
+           // this is a shallow merge . update the key 
+           {this.setState({name:'Andrei'})
+           }}
+           >
+             Change name
+           </button>
            <a
             className="App-link"
             href="https://reactjs.org"
@@ -21,8 +37,6 @@ class App extends Component {
             Learn React
           </a>
         </header>
-      
-  
   </div>
   
   )
