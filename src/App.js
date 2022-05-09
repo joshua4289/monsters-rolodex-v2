@@ -8,37 +8,30 @@ class App extends Component {
     // call super for proper initialization 
     super();
 
-    this.state = {name:'Josh'};
+    this.state = {
+      monsters : [
+        {name:'Linda',id:"1#$ca"},
+        {name:'Jacky',id:"1#$cb"},
+        {name:'Josh',id:"1#$ca"},
+        {name:'Joshua',id:"1#$cc"},
+        {name:'Joshua',id:"1#$cd"}
 
-
-  }
+,
+      ]
+  };
+}; // end of costructor
 
   render(){
   return (
-  <div className="App">
-         <header className="App-header">
-           <img src={logo} className="App-logo" alt="logo" />
-           <p>
-             Hi {this.state.name}
-           </p>
-           <button onClick={()=>
-           // this is a shallow merge . update the key 
-           {this.setState({name:'Andrei'})
-           }}
-           >
-             Change name
-           </button>
-           <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-  </div>
-  
+    <div className='App'>
+      {this.state.monsters.map((monster) => { 
+        
+        return <h1 key={monsters.id}>{monster.name}</h1>
+        
+        }
+        )}
+
+    </div>
   )
   }
 }
