@@ -16,7 +16,10 @@ class App extends Component {
 componentDidMount(){
     // Users from the API
   console.log('Componentdidmount');
-  fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json()).then(users => console.log(users));
+  fetch("https://jsonplaceholder.typicode.com/users").
+  then(response => response.json()).
+  then(users => this.setState( () => {return {monsters: users}}));
+
        
 }
 
